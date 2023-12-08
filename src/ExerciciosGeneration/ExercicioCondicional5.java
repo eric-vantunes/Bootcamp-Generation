@@ -51,7 +51,10 @@ public class ExercicioCondicional5 {
 		
 		System.out.println("\nProduto: " + nomeProduto);
 		System.out.printf("\nValor total foi: R$ %.2f\n ", total);
+		
+		ler.close();
 
 	}
+	
 
 }
