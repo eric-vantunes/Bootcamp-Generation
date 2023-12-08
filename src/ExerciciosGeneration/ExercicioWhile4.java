@@ -17,7 +17,7 @@ public class ExercicioWhile4 {
 			contadorFullStackNaoBinarioMenor30 = 0, 
 			contadorPessoas = 0;
 			
-			double soma = 0;
+			float soma = 0;
 			
 			while(true) {
 				System.out.println("Informe a Idade: ");
@@ -26,28 +26,38 @@ public class ExercicioWhile4 {
 				genero = leia.nextInt();
 	            System.out.println("Pessoa Desenvolvedora (1 - Backend; 2 - Frontend; 3 - Mobile; 4 - FullStack): ");
 	            pessoaDesenvolvedora = leia.nextInt();
-	            
-	            System.out.println("\nDeseja continuar (S/N)");
-	            char resposta = leia.next().charAt(0);
-	            
-	            if(resposta == 'N' || resposta == 'n') {
-	            	break;
-	            }
-	            
+	            	            	            
+	            //Backend
 	            if(pessoaDesenvolvedora == 1) {
 	            	contadorBackend++;
-	            } else if(genero == 1 || genero == 4) {
+	            }
+	            //Frontend
+	            else if(genero == 1 || genero == 4) {
 	            	if(pessoaDesenvolvedora == 2) {
 	            		contadorFrontendMulher++;
 	            	}
-	            } else if (genero == 3 && pessoaDesenvolvedora == 4) {
-	            	if(idade < 30) {
-	            		contadorFullStackNaoBinarioMenor30++;
+	            //Mobile	
+	            } else if (genero == 2 || pessoaDesenvolvedora == 5) {
+	            	if(pessoaDesenvolvedora == 3 && idade > 40) {
+	            		contadorMobileMaior40++;
 	            	}
 	            }
 	            
+	            //Fullstack
+	            if(genero == 3) {
+	            	if(pessoaDesenvolvedora == 4 && idade < 30) {
+	            		contadorFullStackNaoBinarioMenor30++;
+	            	}
+	            }
+	            contadorPessoas++;   
+	            
 	            soma = soma + idade;
-	            contadorPessoas++;
+	            
+	            System.out.println("\nDeseja continuar (S/N)");
+	            char continuar = leia.next().charAt(0);
+	            if(continuar == 'N' || continuar == 'n') {
+	            	break;
+	            }
 			}
 			
 	        System.out.println("\nTotal de pessoas desenvolvedoras Backend: " + contadorBackend);
@@ -57,8 +67,7 @@ public class ExercicioWhile4 {
 	        System.out.println("\nO número total de pessoas que responderam à pesquisa: " + contadorPessoas);
 	        System.out.println("\nA média de idade das pessoas que responderam à pesquisa: " + soma / contadorPessoas);
 	        
-	        leia.close();
+	       	} 
+			
+	}
 
-	} 
-
-}
