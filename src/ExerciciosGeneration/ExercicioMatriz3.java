@@ -21,7 +21,7 @@ public class ExercicioMatriz3 {
 		System.out.println("Elementos Diagonal Principal: ");
 		for (int i = 0; i < matriz.length; i++) {
 			System.out.println(matriz[i][i]);
-			somaDiagonalPrincipal += matriz[i][2 - i];
+			somaDiagonalPrincipal += matriz[i][i];
 		}
 		System.out.println("Elementos Diagonal Secundaria: ");
 		for (int i = 0; i < matriz.length; i++) {
@@ -29,8 +29,8 @@ public class ExercicioMatriz3 {
 			somaDiagonalSecundaria += matriz[i][2 - i];
 		}
 		
-		System.out.println("Soma do elementos da Diagonal Principal" + somaDiagonalPrincipal);
-		System.out.println("Soma do elementos da Diagonal Principal" + somaDiagonalSecundaria);
+		System.out.println("Soma do elementos da Diagonal Principal: " + somaDiagonalPrincipal);
+		System.out.println("Soma do elementos da Diagonal Secundaria: " + somaDiagonalSecundaria);
 	}
 
 }
